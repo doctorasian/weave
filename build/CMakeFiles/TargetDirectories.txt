@@ -1,0 +1,3 @@
+/home/doctorasian/weave/build/CMakeFiles/weave.dir
+/home/doctorasian/weave/build/CMakeFiles/edit_cache.dir
+/home/doctorasian/weave/build/CMakeFiles/rebuild_cache.dir
