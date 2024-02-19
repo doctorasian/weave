@@ -1,0 +1,21 @@
+#build artifacts
+build/
+bin/
+*.exe
+*.out
+
+#cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+#generated files
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+#cache
+*.cache
