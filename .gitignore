@@ -1,6 +1,4 @@
 #build artifacts
-build/
-bin/
 *.exe
 *.out
 
