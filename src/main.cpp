@@ -1,9 +1,11 @@
 // clang-format off
+#include <cmath>
+#include <cmath>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 // clang-format on
-#include <shader.h>
 #include <iostream>
+#include <shader.h>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   glViewport(0, 0, width, height);
@@ -52,7 +54,8 @@ int main() {
     return -1;
   }
 
-  Shader defaultShader("../assets/shaders/diag.vert.glsl", "../assets/shaders/color.frag.glsl");
+  Shader defaultShader("../assets/shaders/diag.vert.glsl",
+                       "../assets/shaders/color.frag.glsl");
 
   /* We've already sent our input vertex data to GPU and told it how to
    * interpret the data based on our vertex and fragment shaders. We still need
@@ -106,9 +109,15 @@ int main() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     defaultShader.use();
+
+    float timeVal = glfwGetTime();
+    float moveTri = (cos(timeVal) * 0.150f) / 0.32f;
+    float changeCol = moveTri * 5;
+    defaultShader.setFloat("horizontalOffset", moveTri);
+    defaultShader.setFloat("strobeLight", changeCol);
     glBindVertexArray(VAO);
     // glDrawArrays(GL_TRIANGLES, 0, 6);
-    glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 
     glfwSwapBuffers(window);
     glfwPollEvents();
