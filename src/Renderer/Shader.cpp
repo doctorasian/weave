@@ -1,10 +1,7 @@
 #include <Shader.h>
-#include <glad/glad.h>
-
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <string>
 
 void Shader::Load(std::string vertexPath, std::string fragmentPath) {
   std::string vertexCode;

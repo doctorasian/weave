@@ -13,6 +13,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(../vendor/)
 include_directories(../vendor/stb_image)
 include_directories(Renderer)
+include_directories(.)
 
 find_package(glfw3 REQUIRED)
 

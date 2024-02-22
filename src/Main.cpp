@@ -1,11 +1,7 @@
-// clang-format off
-#include <cmath>
-#include <cmath>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-// clang-format on
-#include <iostream>
+#include <Common.h>
 #include <Shader.h>
+#include <cmath>
+#include <iostream>
 #include <stb_image.h>
 #include <sys/types.h>
 
@@ -54,7 +50,7 @@ int main() {
 
   Shader defaultShader;
   defaultShader.Load("../res/shaders/diag.vert.glsl",
-                       "../res/shaders/color.frag.glsl");
+                     "../res/shaders/color.frag.glsl");
 
   /* We've already sent our input vertex data to GPU and told it how to
    * interpret the data based on our vertex and fragment shaders. We still need
@@ -105,7 +101,7 @@ int main() {
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
                   GL_LINEAR_MIPMAP_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  
+
   int width, height, numColorChannels;
   u_char *imageData = stbi_load("../res/textures/brown_tiles.jpg", &width,
                                 &height, &numColorChannels, 0);
