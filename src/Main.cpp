@@ -5,7 +5,9 @@
 #include <GLFW/glfw3.h>
 // clang-format on
 #include <iostream>
-#include <shader.h>
+#include <Shader.h>
+#include <stb_image.h>
+#include <sys/types.h>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   glViewport(0, 0, width, height);
@@ -50,8 +52,9 @@ int main() {
     return -1;
   }
 
-  Shader defaultShader("../assets/shaders/diag.vert.glsl",
-                       "../assets/shaders/color.frag.glsl");
+  Shader defaultShader;
+  defaultShader.Load("../res/shaders/diag.vert.glsl",
+                       "../res/shaders/color.frag.glsl");
 
   /* We've already sent our input vertex data to GPU and told it how to
    * interpret the data based on our vertex and fragment shaders. We still need
@@ -93,6 +96,27 @@ int main() {
   glEnableVertexAttribArray(0);
   glEnableVertexAttribArray(1);
 
+  /* Texture Loading */
+  u_int texture;
+  glGenTextures(1, &texture);
+  glBindTexture(GL_TEXTURE_2D, texture);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                  GL_LINEAR_MIPMAP_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  
+  int width, height, numColorChannels;
+  u_char *imageData = stbi_load("../res/textures/brown_tiles.jpg", &width,
+                                &height, &numColorChannels, 0);
+  if (imageData) {
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
+                 GL_UNSIGNED_BYTE, imageData);
+    glGenerateMipmap(GL_TEXTURE_2D);
+  } else {
+    std::cerr << "TEXTURE::LOAD::FAILURE" << std::endl;
+  }
+  stbi_image_free(imageData);
   // glBindBuffer(GL_ARRAY_BUFFER, 0);
   // glBindVertexArray(0);
   // glfwSetKeyCallback(window, toggle_wireframe_callback);
@@ -104,13 +128,13 @@ int main() {
     glClearColor(0.5f, 0.53f, 0.79f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    defaultShader.use();
+    defaultShader.Use();
 
     float timeVal = glfwGetTime();
     float moveTri = (cos(timeVal) * 0.150f) / 0.32f;
     float changeCol = moveTri * 5;
-    defaultShader.setFloat("horizontalOffset", moveTri);
-    defaultShader.setFloat("strobeLight", changeCol);
+    defaultShader.SetFloat("horizontalOffset", moveTri);
+    defaultShader.SetFloat("strobeLight", changeCol);
     glBindVertexArray(VAO);
     // glDrawArrays(GL_TRIANGLES, 0, 6);
     glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);

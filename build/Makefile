@@ -129,53 +129,101 @@ weave/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/build
 .PHONY : weave/fast
 
-glad.o: glad.c.o
-.PHONY : glad.o
+Main.o: Main.cpp.o
+.PHONY : Main.o
 
 # target to build an object file
-glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/glad.c.o
-.PHONY : glad.c.o
+Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Main.cpp.o
+.PHONY : Main.cpp.o
 
-glad.i: glad.c.i
-.PHONY : glad.i
+Main.i: Main.cpp.i
+.PHONY : Main.i
 
 # target to preprocess a source file
-glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/glad.c.i
-.PHONY : glad.c.i
+Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Main.cpp.i
+.PHONY : Main.cpp.i
 
-glad.s: glad.c.s
-.PHONY : glad.s
+Main.s: Main.cpp.s
+.PHONY : Main.s
 
 # target to generate assembly for a file
-glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/glad.c.s
-.PHONY : glad.c.s
+Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Main.cpp.s
+.PHONY : Main.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+Renderer/Shader.o: Renderer/Shader.cpp.o
+.PHONY : Renderer/Shader.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/main.cpp.o
-.PHONY : main.cpp.o
+Renderer/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Shader.cpp.o
+.PHONY : Renderer/Shader.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+Renderer/Shader.i: Renderer/Shader.cpp.i
+.PHONY : Renderer/Shader.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/main.cpp.i
-.PHONY : main.cpp.i
+Renderer/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Shader.cpp.i
+.PHONY : Renderer/Shader.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Renderer/Shader.s: Renderer/Shader.cpp.s
+.PHONY : Renderer/Shader.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/main.cpp.s
-.PHONY : main.cpp.s
+Renderer/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Shader.cpp.s
+.PHONY : Renderer/Shader.cpp.s
+
+home/doctorasian/weave/vendor/glad/glad.o: home/doctorasian/weave/vendor/glad/glad.c.o
+.PHONY : home/doctorasian/weave/vendor/glad/glad.o
+
+# target to build an object file
+home/doctorasian/weave/vendor/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/glad/glad.c.o
+.PHONY : home/doctorasian/weave/vendor/glad/glad.c.o
+
+home/doctorasian/weave/vendor/glad/glad.i: home/doctorasian/weave/vendor/glad/glad.c.i
+.PHONY : home/doctorasian/weave/vendor/glad/glad.i
+
+# target to preprocess a source file
+home/doctorasian/weave/vendor/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/glad/glad.c.i
+.PHONY : home/doctorasian/weave/vendor/glad/glad.c.i
+
+home/doctorasian/weave/vendor/glad/glad.s: home/doctorasian/weave/vendor/glad/glad.c.s
+.PHONY : home/doctorasian/weave/vendor/glad/glad.s
+
+# target to generate assembly for a file
+home/doctorasian/weave/vendor/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/glad/glad.c.s
+.PHONY : home/doctorasian/weave/vendor/glad/glad.c.s
+
+home/doctorasian/weave/vendor/stb_image/stb_image.o: home/doctorasian/weave/vendor/stb_image/stb_image.c.o
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.o
+
+# target to build an object file
+home/doctorasian/weave/vendor/stb_image/stb_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/stb_image/stb_image.c.o
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.c.o
+
+home/doctorasian/weave/vendor/stb_image/stb_image.i: home/doctorasian/weave/vendor/stb_image/stb_image.c.i
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.i
+
+# target to preprocess a source file
+home/doctorasian/weave/vendor/stb_image/stb_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/stb_image/stb_image.c.i
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.c.i
+
+home/doctorasian/weave/vendor/stb_image/stb_image.s: home/doctorasian/weave/vendor/stb_image/stb_image.c.s
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.s
+
+# target to generate assembly for a file
+home/doctorasian/weave/vendor/stb_image/stb_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/home/doctorasian/weave/vendor/stb_image/stb_image.c.s
+.PHONY : home/doctorasian/weave/vendor/stb_image/stb_image.c.s
 
 # Help Target
 help:
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... weave"
-	@echo "... glad.o"
-	@echo "... glad.i"
-	@echo "... glad.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
+	@echo "... Renderer/Shader.o"
+	@echo "... Renderer/Shader.i"
+	@echo "... Renderer/Shader.s"
+	@echo "... home/doctorasian/weave/vendor/glad/glad.o"
+	@echo "... home/doctorasian/weave/vendor/glad/glad.i"
+	@echo "... home/doctorasian/weave/vendor/glad/glad.s"
+	@echo "... home/doctorasian/weave/vendor/stb_image/stb_image.o"
+	@echo "... home/doctorasian/weave/vendor/stb_image/stb_image.i"
+	@echo "... home/doctorasian/weave/vendor/stb_image/stb_image.s"
 .PHONY : help
 
 
