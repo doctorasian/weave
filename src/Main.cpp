@@ -37,7 +37,6 @@ int main() {
   if (window == NULL) {
     std::cout << "window alloc failed" << std::endl;
     glfwTerminate();
-    return -1;
   }
 
   glfwMakeContextCurrent(window);

@@ -14,6 +14,7 @@ include_directories(../vendor/)
 include_directories(../vendor/stb_image)
 include_directories(Renderer)
 include_directories(.)
+include_directories(Core)
 
 find_package(glfw3 REQUIRED)
 
