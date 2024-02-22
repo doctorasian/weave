@@ -4,19 +4,19 @@
 
 struct Shaders {
   Shader geometry;
-} _shaders;
+} shaders;
 
 void drawTriangle();
 
 void Renderer::Init() {
-  _shaders.geometry.Load("../res/shaders/diag.vert.glsl",
+  shaders.geometry.Load("../res/shaders/diag.vert.glsl",
                          "../res/shaders/color.frag.glsl");
 }
 
 void Renderer::RenderFrame() {
   glClearColor(0.5f, 0.53f, 0.70f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT);
-  _shaders.geometry.Use();
+  shaders.geometry.Use();
   drawTriangle();
 }
 
@@ -61,7 +61,7 @@ void drawTriangle() {
   float timeVal = glfwGetTime();
   float moveTri = cos(timeVal) * 0.750f;
   float changeCol = moveTri * 5;
-  _shaders.geometry.SetFloat("horizontalOffset", moveTri);
-  _shaders.geometry.SetFloat("strobeLight", changeCol);
+  shaders.geometry.SetFloat("horizontalOffset", moveTri);
+  shaders.geometry.SetFloat("strobeLight", changeCol);
   glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 }

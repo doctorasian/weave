@@ -1,7 +1,7 @@
 #include <GL.h>
 
 namespace GL {
-inline GLFWwindow *_window;
+inline GLFWwindow *window;
 }
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
@@ -14,31 +14,31 @@ void GL::Init(int width, int height) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-  _window = glfwCreateWindow(600, 800, "Weave", NULL, NULL);
-  if (_window == NULL) {
+  window = glfwCreateWindow(600, 800, "Weave", NULL, NULL);
+  if (window == NULL) {
     std::cout << "GLFW Window Creation Failure" << std::endl;
     glfwTerminate();
     return;
   }
-  glfwMakeContextCurrent(_window);
-  glfwSetFramebufferSizeCallback(_window, framebuffer_size_callback);
+  glfwMakeContextCurrent(window);
+  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
     std::cout << "Failed to initialize GLAD" << std::endl;
     return;
   }
   glClear(GL_COLOR_BUFFER_BIT);
-  glfwSwapBuffers(_window);
+  glfwSwapBuffers(window);
   glfwPollEvents();
 }
 
-void GL::ProcessExitInput() { processExitInput(_window); }
+void GL::ProcessExitInput() { processExitInput(window); }
 
 void GL::Cleanup() { glfwTerminate(); }
 
-bool GL::WindowIsOpen() { return !glfwWindowShouldClose(_window); }
+bool GL::WindowIsOpen() { return !glfwWindowShouldClose(window); }
 
 void GL::SwapBuffersPollEvents() {
-  glfwSwapBuffers(_window);
+  glfwSwapBuffers(window);
   glfwPollEvents();
 }
 

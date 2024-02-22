@@ -10,9 +10,9 @@ public:
   int GetWidth();
   int GetHeight();
 private:
-  uint _TextureID = 0;
-  u_char *_imageData = nullptr;
-  int _numColorChannels = 0;
-  int _width = 0;
-  int _height = 0;
+  uint mTextureID = 0;
+  u_char *mImageData = nullptr;
+  int mNumColorChannels = 0;
+  int mWidth = 0;
+  int mHeight = 0;
 };
