@@ -4,6 +4,9 @@ project(weave)
 set(SOURCES
 	Main.cpp
 	Renderer/Shader.cpp
+	Core/Engine.cpp
+	Core/GL.cpp
+	Renderer/Renderer.cpp
     ../vendor/glad/glad.c
     ../vendor/stb_image/stb_image.c
 )

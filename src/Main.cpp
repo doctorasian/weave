@@ -1,34 +1,17 @@
 #include <Common.h>
+#include <Engine.h>
 #include <Shader.h>
 #include <cmath>
 #include <iostream>
 #include <stb_image.h>
 #include <sys/types.h>
 
-void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
-  glViewport(0, 0, width, height);
-}
-
-void toggle_wireframe_callback(GLFWwindow *window, int key, int scancode,
-                               int action, int mods) {
-  if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
-    GLint i = 0;
-    glGetIntegerv(GL_POLYGON_MODE, &i);
-    glPolygonMode(GL_FRONT_AND_BACK, i == GL_FILL ? GL_FILL : GL_LINE);
-  }
-}
-
-void processInput(GLFWwindow *window) {
-  if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-    glfwSetWindowShouldClose(window, true);
-  }
-}
-
 int main() {
 
   std::cout << "The first step is to start." << std::endl;
+  Engine::Run();
+  /**
   glfwInit();
-  /* set opengl req. for ver 3.3 */
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -46,7 +29,7 @@ int main() {
     std::cout << "Failed to initialize GLAD" << std::endl;
     return -1;
   }
-
+  */
   Shader defaultShader;
   defaultShader.Load("../res/shaders/diag.vert.glsl",
                      "../res/shaders/color.frag.glsl");
@@ -115,8 +98,9 @@ int main() {
   // glBindBuffer(GL_ARRAY_BUFFER, 0);
   // glBindVertexArray(0);
   // glfwSetKeyCallback(window, toggle_wireframe_callback);
+  
   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-  /* Render Loop */
+  /*
   while (!glfwWindowShouldClose(window)) {
     processInput(window);
 
@@ -139,5 +123,6 @@ int main() {
   }
 
   glfwTerminate();
+  */
   return 0;
 }

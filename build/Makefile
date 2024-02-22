@@ -129,6 +129,54 @@ weave/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/build
 .PHONY : weave/fast
 
+Core/Engine.o: Core/Engine.cpp.o
+.PHONY : Core/Engine.o
+
+# target to build an object file
+Core/Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/Engine.cpp.o
+.PHONY : Core/Engine.cpp.o
+
+Core/Engine.i: Core/Engine.cpp.i
+.PHONY : Core/Engine.i
+
+# target to preprocess a source file
+Core/Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/Engine.cpp.i
+.PHONY : Core/Engine.cpp.i
+
+Core/Engine.s: Core/Engine.cpp.s
+.PHONY : Core/Engine.s
+
+# target to generate assembly for a file
+Core/Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/Engine.cpp.s
+.PHONY : Core/Engine.cpp.s
+
+Core/GL.o: Core/GL.cpp.o
+.PHONY : Core/GL.o
+
+# target to build an object file
+Core/GL.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/GL.cpp.o
+.PHONY : Core/GL.cpp.o
+
+Core/GL.i: Core/GL.cpp.i
+.PHONY : Core/GL.i
+
+# target to preprocess a source file
+Core/GL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/GL.cpp.i
+.PHONY : Core/GL.cpp.i
+
+Core/GL.s: Core/GL.cpp.s
+.PHONY : Core/GL.s
+
+# target to generate assembly for a file
+Core/GL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Core/GL.cpp.s
+.PHONY : Core/GL.cpp.s
+
 Main.o: Main.cpp.o
 .PHONY : Main.o
 
@@ -152,6 +200,30 @@ Main.s: Main.cpp.s
 Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Main.cpp.s
 .PHONY : Main.cpp.s
+
+Renderer/Renderer.o: Renderer/Renderer.cpp.o
+.PHONY : Renderer/Renderer.o
+
+# target to build an object file
+Renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Renderer.cpp.o
+.PHONY : Renderer/Renderer.cpp.o
+
+Renderer/Renderer.i: Renderer/Renderer.cpp.i
+.PHONY : Renderer/Renderer.i
+
+# target to preprocess a source file
+Renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Renderer.cpp.i
+.PHONY : Renderer/Renderer.cpp.i
+
+Renderer/Renderer.s: Renderer/Renderer.cpp.s
+.PHONY : Renderer/Renderer.s
+
+# target to generate assembly for a file
+Renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weave.dir/build.make CMakeFiles/weave.dir/Renderer/Renderer.cpp.s
+.PHONY : Renderer/Renderer.cpp.s
 
 Renderer/Shader.o: Renderer/Shader.cpp.o
 .PHONY : Renderer/Shader.o
@@ -234,9 +306,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... weave"
+	@echo "... Core/Engine.o"
+	@echo "... Core/Engine.i"
+	@echo "... Core/Engine.s"
+	@echo "... Core/GL.o"
+	@echo "... Core/GL.i"
+	@echo "... Core/GL.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
+	@echo "... Renderer/Renderer.o"
+	@echo "... Renderer/Renderer.i"
+	@echo "... Renderer/Renderer.s"
 	@echo "... Renderer/Shader.o"
 	@echo "... Renderer/Shader.i"
 	@echo "... Renderer/Shader.s"
