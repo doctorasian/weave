@@ -4,6 +4,7 @@ project(weave)
 set(SOURCES
     main.cpp
     glad.c
+    image_loader.c
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

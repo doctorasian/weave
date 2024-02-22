@@ -28,11 +28,7 @@ void processInput(GLFWwindow *window) {
 
 int main() {
 
-  /*std::cout << "Life is but a sensory illusion. If our ultimate "
-               "destiny is death, the stop of sensory influx, then why "
-               "live to facilitate the processing of it? - Santanu"
-            << std::endl;
-  */
+  std::cout << "The first step is to start." << std::endl;
   glfwInit();
   /* set opengl req. for ver 3.3 */
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

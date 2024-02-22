@@ -10,6 +10,6 @@ uniform float horizontalOffset;
 void main() {
 	//gl_Position = vec4(aPos.x + horizontalOffset, -aPos.y * horizontalOffset, aPos.z + horizontalOffset, 1.0);
 	fragPos = aPos;
-	gl_Position = vec4(aPos, 1.0f);
+	gl_Position = vec4(aPos * horizontalOffset, 1.0f);
 	triColor = aColor;
 }
