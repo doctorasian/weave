@@ -1,5 +1,7 @@
 #include <Common.h>
 
 namespace Renderer {
-	void RenderFrame();
+void Init();
+void RenderFrame();
 }
+
