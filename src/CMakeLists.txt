@@ -16,6 +16,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(../vendor/)
 include_directories(../vendor/stb_image)
 include_directories(Renderer)
+include_directories(/lib/glm/)
 include_directories(.)
 include_directories(Core)
 

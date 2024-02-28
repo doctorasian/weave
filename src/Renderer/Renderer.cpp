@@ -1,7 +1,9 @@
 #include <Renderer.h>
 #include <Shader.h>
 #include <Texture.h>
-#include <cmath>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 struct Shaders {
   Shader geometry;
@@ -22,7 +24,9 @@ void Renderer::RenderFrame() {
   shaders.geometry.Use();
   drawShape();
 }
-
+/**
+dumping stuff here temporarily
+*/
 void createShape() {
   uint VAO;
   glGenVertexArrays(1, &VAO);
@@ -37,7 +41,7 @@ void createShape() {
   };
   unsigned int indices[]{
       0, 1, 2, 
-      0, 2, 3,
+      0, 3, 2,
   };
   // clang-format on
   uint VBO;
@@ -87,4 +91,11 @@ void createShape() {
 
 void drawShape() {
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+  glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+  glm::mat4 trans = glm::mat4(1.0f);
+  trans = glm::translate(trans, glm::vec3(0.25f,0.25f,0.0f));
+  trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0, 0.0, 1.0));
+  trans = glm::scale(trans, glm::vec3(1.0f, 1.0f, 1.0f));
+  uint transformLoc = glGetUniformLocation(shaders.geometry.ID, "transform");
+  glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 }
