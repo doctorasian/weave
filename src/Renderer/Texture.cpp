@@ -1,5 +1,9 @@
 #include <Texture.h>
 
+/**
+Generates texture with preset opts and loads info onto Texture struct
+@param texturePath requires path/to/texture
+*/
 void Texture::Load(const std::string texturePath) {
   glGenTextures(1, &mTextureID);
   glBindTexture(GL_TEXTURE_2D, mTextureID);
@@ -19,7 +23,11 @@ void Texture::Load(const std::string texturePath) {
   stbi_image_free(mImageData);
 }
 
-void Texture::Bind(uint textureSlot) {
-  glActiveTexture(GL_TEXTURE0 + textureSlot);
+/**
+Selects a texture slot and binds to OpenGL_Context
+@param textureUnit selects texture based on location
+*/
+void Texture::Bind(uint textureUnit) {
+  glActiveTexture(GL_TEXTURE0 + textureUnit);
   glBindTexture(GL_TEXTURE_2D, mTextureID);
 }

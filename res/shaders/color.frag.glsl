@@ -1,11 +1,9 @@
 #version 330 core
-in vec3 triColor;
-in vec3 fragPos;
-
+in vec2 TexCoord;
 out vec4 fragColor;
 
-uniform float strobeLight;
+uniform sampler2D tileTexture;
 
 void main() {
-	fragColor = vec4(fragPos, 1.0f);
+	fragColor = texture(tileTexture, TexCoord);
 }
