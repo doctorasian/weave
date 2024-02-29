@@ -2,7 +2,9 @@
 
 namespace GL {
 inline GLFWwindow *window;
-}
+inline int window_width;
+inline int window_height;
+} // namespace GL
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processExitInput(GLFWwindow *window);
@@ -14,7 +16,9 @@ void GL::Init(int width, int height) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-  window = glfwCreateWindow(600, 800, "Weave", NULL, NULL);
+  window = glfwCreateWindow(width, height, "Weave", NULL, NULL);
+  window_width = width;
+  window_height = height;
   if (window == NULL) {
     std::cout << "GLFW Window Creation Failure" << std::endl;
     glfwTerminate();
@@ -26,10 +30,15 @@ void GL::Init(int width, int height) {
     std::cout << "Failed to initialize GLAD" << std::endl;
     return;
   }
+  glEnable(GL_DEPTH_TEST);
   glClear(GL_COLOR_BUFFER_BIT);
   glfwSwapBuffers(window);
   glfwPollEvents();
 }
+
+int GL::getWidth() { return window_width; }
+
+int GL::getHeight() { return window_height; }
 
 void GL::ProcessExitInput() { processExitInput(window); }
 
