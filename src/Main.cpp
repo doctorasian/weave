@@ -11,6 +11,5 @@ int main() {
   /* TODO: Upgrade Package 3.3 -> 4.x */
   std::cout << "The first step is to start." << std::endl;
   Engine::Run();
-  return EXIT_SUCCESS;
   return 0;
 }
