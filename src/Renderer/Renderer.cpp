@@ -115,16 +115,11 @@ void createShape() {
 
 void drawShape() {
   glm::mat4 model = glm::mat4(1.0f);
-  model =
-      glm::rotate(model, (float)glfwGetTime(), glm::vec3(1.0f, 1.25f, 0.0f));
 
-  glm::mat4 view = glm::mat4(1.0f);
-
-  view = glm::translate(
-      view, glm::vec3(0.0f, 0.0f, -3.0f)); // moving cam +z, move scene -z
+  glm::mat4 view = GL::getCamera().GetViewMatrix();
 
   glm::mat4 projection = glm::mat4(1.0f);
-  projection = glm::perspective(glm::radians(45.0f),
+  projection = glm::perspective(glm::radians(GL::getCamera().getZoom()),
                                 (float)GL::getWidth() / (float)GL::getHeight(),
                                 0.1f, 100.0f);
 
